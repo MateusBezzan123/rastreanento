@@ -13,6 +13,9 @@ const Register = () => {
     try {
       const response = await axios.post('http://localhost:3000/users/register', { name, email, password });
       toast.success('Cadastro realizado com sucesso!');
+      setName('');
+      setEmail('');
+      setPassword('');
       console.log(response.data);
     } catch (error) {
       toast.error('Erro ao realizar cadastro!');

@@ -17,6 +17,8 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/users/login', { email, password });
       setAuth(response.data);
       toast.success('Login realizado com sucesso!');
+      setEmail('');
+      setPassword('');
       navigate('/userinfo');
     } catch (error) {
       toast.error('Erro ao realizar login!');

@@ -6,7 +6,7 @@ import Register from './components/Register';
 import UserInfo from './components/UserInfo';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
-import './App.css';  
+import './App.css';  // Import the CSS file for styling
 
 const App = () => {
   return (
