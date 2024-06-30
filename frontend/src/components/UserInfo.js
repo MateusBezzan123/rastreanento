@@ -14,20 +14,20 @@ const UserInfo = () => {
         });
         setUser(response.data);
       } catch (error) {
-        console.error('Failed to fetch user info', error);
+        console.error('Erro ao buscar informações do usuário', error);
       }
     };
 
     fetchUser();
   }, [auth]);
 
-  if (!user) return <div>Loading...</div>;
+  if (!user) return <div>Carregando...</div>;
 
   return (
     <div className="user-info-container">
-      <h2>User Info</h2>
+      <h2>Informações do Usuário</h2>
       <div className="user-info">
-        <p><strong>Name:</strong> {user.name}</p>
+        <p><strong>Nome:</strong> {user.name}</p>
         <p><strong>Email:</strong> {user.email}</p>
       </div>
     </div>
