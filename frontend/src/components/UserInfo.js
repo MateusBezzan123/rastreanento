@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const UserInfo = () => {
-  const { auth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -21,6 +23,11 @@ const UserInfo = () => {
     fetchUser();
   }, [auth]);
 
+  const handleLogout = () => {
+    setAuth(null);
+    navigate('/login');
+  };
+
   if (!user) return <div>Carregando...</div>;
 
   return (
@@ -30,6 +37,7 @@ const UserInfo = () => {
         <p><strong>Nome:</strong> {user.name}</p>
         <p><strong>Email:</strong> {user.email}</p>
       </div>
+      <button onClick={handleLogout} style={{ marginTop: '10px' }}>Logout</button>
     </div>
   );
 };
