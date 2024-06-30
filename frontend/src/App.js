@@ -5,12 +5,13 @@ import Register from './components/Register';
 import UserInfo from './components/UserInfo';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import './App.css';  // Import the CSS file for styling
 
 const App = () => {
   return (
     <AuthProvider>
       <Router>
-        <div>
+        <div className="app-container">
           <h1>Vehicle Tracking Platform</h1>
           <Routes>
             <Route path="/login" element={<Login />} />

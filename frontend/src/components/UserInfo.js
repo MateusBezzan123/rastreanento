@@ -24,10 +24,12 @@ const UserInfo = () => {
   if (!user) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="user-info-container">
       <h2>User Info</h2>
-      <p>Name: {user.name}</p>
-      <p>Email: {user.email}</p>
+      <div className="user-info">
+        <p><strong>Name:</strong> {user.name}</p>
+        <p><strong>Email:</strong> {user.email}</p>
+      </div>
     </div>
   );
 };
