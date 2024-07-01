@@ -13,4 +13,5 @@ router.get('/:id', authenticateToken, userController.getUser);
 router.put('/:id', authenticateToken, updateUserValidation, userController.updateUser);
 router.delete('/:id', authenticateToken, userController.deleteUser);
 
+
 export default router;
